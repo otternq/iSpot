@@ -16,6 +16,17 @@
 
 @implementation SPViewController {
     SPAPI * req;
+    NSString * host;
+}
+
+- (id) init {
+    self = [self init];
+    
+    if (self) {
+        host = @"http://dj.nickotter.com:5051";
+    }
+    
+    return self;
 }
 
 - (void)viewDidLoad
@@ -46,7 +57,7 @@
 }
 
 - (void) loadImage {
-    NSString * imgURL = @"http://dj.nickotter.com:5051/playing.png";
+    NSString * imgURL = [NSString stringWithFormat:@"%@/playing.png", host];
     NSLog(@"Loading image from url: %@", imgURL);
     
     _imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imgURL]]];
@@ -61,26 +72,30 @@
 - (IBAction)playButton:(id)sender {
     NSLog(@"Pressed play button");
     
-    [[SPAPIControl alloc] initWithEndpoint:@"http://dj.nickotter.com:5051/play" method:@"PUT"];
+    NSString * playEndpoint = [NSString stringWithFormat:@"%@/play", host];
+    [[SPAPIControl alloc] initWithEndpoint:playEndpoint method:@"PUT"];
 }
 
 - (IBAction)pauseButton:(id)sender {
     NSLog(@"Pressed play button");
     
-    [[SPAPIControl alloc] initWithEndpoint:@"http://dj.nickotter.com:5051/pause" method:@"PUT"];
+    NSString * pauseEndpoint = [NSString stringWithFormat:@"%@/pause", host];
+    [[SPAPIControl alloc] initWithEndpoint:pauseEndpoint method:@"PUT"];
 }
 
 
 - (IBAction)nextButton:(id)sender {
     NSLog(@"Pressed play button");
     
-    [[SPAPIControl alloc] initWithEndpoint:@"http://dj.nickotter.com:5051/next" method:@"PUT"];
+    NSString * nextEndpoint = [NSString stringWithFormat:@"%@/next", host];
+    [[SPAPIControl alloc] initWithEndpoint:nextEndpoint method:@"PUT"];
 }
 
 - (IBAction)backButton:(id)sender {
     NSLog(@"Pressed play button");
     
-    [[SPAPIControl alloc] initWithEndpoint:@"http://dj.nickotter.com:5051/back" method:@"PUT"];
+    NSString * backEndpoint = [NSString stringWithFormat:@"%@/back", host];
+    [[SPAPIControl alloc] initWithEndpoint:backEndpoint method:@"PUT"];
 }
 
 
