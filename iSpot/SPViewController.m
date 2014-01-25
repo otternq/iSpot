@@ -8,6 +8,7 @@
 
 #import "SPViewController.h"
 #import "SPAPI.h"
+#import "SPAPIControl.h"
 
 @interface SPViewController ()
 
@@ -59,6 +60,28 @@
 
 - (IBAction)playButton:(id)sender {
     NSLog(@"Pressed play button");
+    
+    [[SPAPIControl alloc] initWithEndpoint:@"http://dj.nickotter.com:5051/play" method:@"PUT"];
 }
+
+- (IBAction)pauseButton:(id)sender {
+    NSLog(@"Pressed play button");
+    
+    [[SPAPIControl alloc] initWithEndpoint:@"http://dj.nickotter.com:5051/pause" method:@"PUT"];
+}
+
+
+- (IBAction)nextButton:(id)sender {
+    NSLog(@"Pressed play button");
+    
+    [[SPAPIControl alloc] initWithEndpoint:@"http://dj.nickotter.com:5051/next" method:@"PUT"];
+}
+
+- (IBAction)backButton:(id)sender {
+    NSLog(@"Pressed play button");
+    
+    [[SPAPIControl alloc] initWithEndpoint:@"http://dj.nickotter.com:5051/back" method:@"PUT"];
+}
+
 
 @end

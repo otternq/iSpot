@@ -23,6 +23,7 @@
 		2D0B147518932CD6004449C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D0B147318932CD6004449C1 /* InfoPlist.strings */; };
 		2D0B147718932CD6004449C1 /* iSpotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0B147618932CD6004449C1 /* iSpotTests.m */; };
 		2D0B148A18935FA1004449C1 /* SPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0B148918935FA1004449C1 /* SPAPI.m */; };
+		2D0B148D18937212004449C1 /* SPAPIControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0B148C18937212004449C1 /* SPAPIControl.m */; };
 		80831720E2464B1CB22610AD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 824D294DC8144BFBBC3ACB90 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,8 @@
 		2D0B147618932CD6004449C1 /* iSpotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSpotTests.m; sourceTree = "<group>"; };
 		2D0B148818935FA1004449C1 /* SPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAPI.h; sourceTree = "<group>"; };
 		2D0B148918935FA1004449C1 /* SPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAPI.m; sourceTree = "<group>"; };
+		2D0B148B18937212004449C1 /* SPAPIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAPIControl.h; sourceTree = "<group>"; };
+		2D0B148C18937212004449C1 /* SPAPIControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAPIControl.m; sourceTree = "<group>"; };
 		824D294DC8144BFBBC3ACB90 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF60A7E5865B440DB03FF430 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +136,8 @@
 				2D0B144F18932CD5004449C1 /* Supporting Files */,
 				2D0B148818935FA1004449C1 /* SPAPI.h */,
 				2D0B148918935FA1004449C1 /* SPAPI.m */,
+				2D0B148B18937212004449C1 /* SPAPIControl.h */,
+				2D0B148C18937212004449C1 /* SPAPIControl.m */,
 			);
 			path = iSpot;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				2D0B148A18935FA1004449C1 /* SPAPI.m in Sources */,
 				2D0B145518932CD5004449C1 /* main.m in Sources */,
 				2D0B146218932CD5004449C1 /* SPViewController.m in Sources */,
+				2D0B148D18937212004449C1 /* SPAPIControl.m in Sources */,
 				2D0B145918932CD5004449C1 /* SPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
