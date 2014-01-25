@@ -7,7 +7,7 @@ An iOS controller for [Spot](https://github.com/minton/Spot)
 Send Play, Pause, and Skip commands to your Spot installation
 
 
-![iSpot Screenshot](https://s3.amazonaws.com/ispot/iOS+Simulator+Screen+shot+Jan+24%2C+2014%2C+8.55.52+PM.png)
+![iSpot Screenshot](https://s3.amazonaws.com/ispot/iOS+Simulator+Screen+shot+Jan+24%2C+2014%2C+9.47.42+PM.png)
 
 ##Warning
 
