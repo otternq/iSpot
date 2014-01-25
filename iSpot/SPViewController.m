@@ -24,14 +24,21 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    host = @"http://dj.nickotter.com:5051";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    host = [defaults objectForKey:@"spotURL"];
     
-    [self loadAux];
-    
-    //req = [[SPAPI alloc] initWithLabel:_songInfo];
-
-    [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(loadAux) userInfo:nil repeats:YES];
-    
+    if (host != NULL) {
+        
+        [self loadAux];
+        
+        //req = [[SPAPI alloc] initWithLabel:_songInfo];
+        
+        [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(loadAux) userInfo:nil repeats:YES];
+        
+    } else {
+        NSLog(@"spotURL is null");
+        //[self performSegueWithIdentifier:@"Settings" sender:self];
+    }
 }
 
 #pragma mark SpotAux
@@ -88,6 +95,12 @@
     
     NSString * backEndpoint = [NSString stringWithFormat:@"%@/back", host];
     [[SPAPIControl alloc] initWithEndpoint:backEndpoint method:@"PUT"];
+}
+
+- (IBAction)unwind:(UIStoryboardSegue *)segue
+{
+    NSLog(@"unwind");
+    [self viewDidLoad];
 }
 
 
