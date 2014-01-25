@@ -19,20 +19,12 @@
     NSString * host;
 }
 
-- (id) init {
-    self = [self init];
-    
-    if (self) {
-        host = @"http://dj.nickotter.com:5051";
-    }
-    
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    host = @"http://dj.nickotter.com:5051";
     
     [self loadAux];
     
