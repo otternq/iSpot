@@ -22,6 +22,8 @@
 		2D0B146D18932CD6004449C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0B144C18932CD5004449C1 /* UIKit.framework */; };
 		2D0B147518932CD6004449C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D0B147318932CD6004449C1 /* InfoPlist.strings */; };
 		2D0B147718932CD6004449C1 /* iSpotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0B147618932CD6004449C1 /* iSpotTests.m */; };
+		2D0B148A18935FA1004449C1 /* SPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0B148918935FA1004449C1 /* SPAPI.m */; };
+		80831720E2464B1CB22610AD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 824D294DC8144BFBBC3ACB90 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		2D0B147218932CD6004449C1 /* iSpotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iSpotTests-Info.plist"; sourceTree = "<group>"; };
 		2D0B147418932CD6004449C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D0B147618932CD6004449C1 /* iSpotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSpotTests.m; sourceTree = "<group>"; };
+		2D0B148818935FA1004449C1 /* SPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAPI.h; sourceTree = "<group>"; };
+		2D0B148918935FA1004449C1 /* SPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAPI.m; sourceTree = "<group>"; };
+		824D294DC8144BFBBC3ACB90 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF60A7E5865B440DB03FF430 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 				2D0B144B18932CD5004449C1 /* CoreGraphics.framework in Frameworks */,
 				2D0B144D18932CD5004449C1 /* UIKit.framework in Frameworks */,
 				2D0B144918932CD5004449C1 /* Foundation.framework in Frameworks */,
+				80831720E2464B1CB22610AD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +95,7 @@
 				2D0B147018932CD6004449C1 /* iSpotTests */,
 				2D0B144718932CD5004449C1 /* Frameworks */,
 				2D0B144618932CD5004449C1 /* Products */,
+				AF60A7E5865B440DB03FF430 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +115,7 @@
 				2D0B144A18932CD5004449C1 /* CoreGraphics.framework */,
 				2D0B144C18932CD5004449C1 /* UIKit.framework */,
 				2D0B146A18932CD6004449C1 /* XCTest.framework */,
+				824D294DC8144BFBBC3ACB90 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,6 +131,8 @@
 				2D0B146118932CD5004449C1 /* SPViewController.m */,
 				2D0B146318932CD5004449C1 /* Images.xcassets */,
 				2D0B144F18932CD5004449C1 /* Supporting Files */,
+				2D0B148818935FA1004449C1 /* SPAPI.h */,
+				2D0B148918935FA1004449C1 /* SPAPI.m */,
 			);
 			path = iSpot;
 			sourceTree = "<group>";
@@ -162,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D0B147A18932CD6004449C1 /* Build configuration list for PBXNativeTarget "iSpot" */;
 			buildPhases = (
+				172D05267D52496A84842C27 /* Check Pods Manifest.lock */,
 				2D0B144118932CD5004449C1 /* Sources */,
 				2D0B144218932CD5004449C1 /* Frameworks */,
 				2D0B144318932CD5004449C1 /* Resources */,
+				B06BE5EB4FF441B79EA451F5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,11 +262,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		172D05267D52496A84842C27 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B06BE5EB4FF441B79EA451F5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2D0B144118932CD5004449C1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D0B148A18935FA1004449C1 /* SPAPI.m in Sources */,
 				2D0B145518932CD5004449C1 /* main.m in Sources */,
 				2D0B146218932CD5004449C1 /* SPViewController.m in Sources */,
 				2D0B145918932CD5004449C1 /* SPAppDelegate.m in Sources */,
@@ -390,6 +437,7 @@
 		};
 		2D0B147B18932CD6004449C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF60A7E5865B440DB03FF430 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -403,6 +451,7 @@
 		};
 		2D0B147C18932CD6004449C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF60A7E5865B440DB03FF430 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -475,6 +524,7 @@
 				2D0B147C18932CD6004449C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D0B147D18932CD6004449C1 /* Build configuration list for PBXNativeTarget "iSpotTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +533,7 @@
 				2D0B147F18932CD6004449C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

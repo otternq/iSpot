@@ -10,6 +10,10 @@
 
 @interface SPViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *songInfo;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *playButton;
 - (IBAction)playButtonTapped:(UIButton *)sender;
 

@@ -7,17 +7,48 @@
 //
 
 #import "SPViewController.h"
+#import "SPAPI.h"
 
 @interface SPViewController ()
 
 @end
 
-@implementation SPViewController
+@implementation SPViewController {
+    SPAPI * req;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self loadAux];
+    
+    //req = [[SPAPI alloc] initWithLabel:_songInfo];
+
+    [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(loadAux) userInfo:nil repeats:YES];
+    
+}
+
+#pragma mark SpotAux
+
+- (void) loadAux {
+    [self loadImage];
+    [self loadData];
+}
+
+- (void) loadData {
+    
+    //(void) req.run;
+    [[SPAPI alloc] initWithLabel:_songInfo];
+    
+}
+
+- (void) loadImage {
+    NSString * imgURL = @"http://dj.nickotter.com:5051/playing.png";
+    NSLog(@"Loading image from url: %@", imgURL);
+    
+    _imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imgURL]]];
 }
 
 - (void)didReceiveMemoryWarning
